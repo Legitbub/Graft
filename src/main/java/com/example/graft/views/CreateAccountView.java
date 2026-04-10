@@ -1,5 +1,6 @@
 package com.example.graft.views;
 
+import com.example.graft.UserService;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
@@ -13,9 +14,9 @@ import com.vaadin.flow.server.auth.AnonymousAllowed;
 @AnonymousAllowed
 @PageTitle("New Account")
 public class CreateAccountView extends HorizontalLayout {
-    public CreateAccountView() {
+    public CreateAccountView(UserService userService) {
         var form = new VerticalLayout();
-        form.setJustifyContentMode(JustifyContentMode.CENTER);
+        form.setAlignItems(Alignment.CENTER);
         add(form);
         form.add(new H1("Welcome to Graft! Create your account."));
         var username = new TextField();
