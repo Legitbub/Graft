@@ -6,6 +6,7 @@
 
 package com.example.graft;
 
+import com.example.graft.views.MainView;
 import com.vaadin.flow.spring.security.VaadinSecurityConfigurer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,7 +22,15 @@ public class VaadinSecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.with(VaadinSecurityConfigurer.vaadin(), configurer -> {});
+        http.with(VaadinSecurityConfigurer.vaadin(), configurer -> {
+            configurer.loginView(MainView.class);
+        });
+
+        http.formLogin(form -> form
+                .loginPage("/")               // Forces the 403 redirect to go to the root
+                .loginProcessingUrl("/login") // Matches loginForm.setAction("login")
+                .permitAll()
+        );
 
         return http.build();
     }
