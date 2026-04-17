@@ -1,3 +1,4 @@
+/*
 package com.example.graft;
 
 import lombok.Data;
@@ -12,3 +13,4 @@ public class Post {
     private String text;
     private LocalDateTime timestamp;
 }
+*/

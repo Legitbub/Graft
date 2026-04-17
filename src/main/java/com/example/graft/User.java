@@ -16,17 +16,20 @@ public class User {
     @GeneratedValue
     private Long ID;
     private String name;
+    private String bio;
+    private String password;
 
-    // Users have a list of friends and posts they made
+    // Users have a list of friends
     @Relationship
     private List<User> friends = new ArrayList<>();
 
-    @Relationship(type = "POSTED", direction = Relationship.Direction.OUTGOING)
+    //May add post functionality in the future
+    /*@Relationship(type = "POSTED", direction = Relationship.Direction.OUTGOING)
     private List<Post> posts = new ArrayList<>();
 
     public void addPost(Post p) {
         posts.add(p);
-    }
+    }*/
 
     public void addFriend(User f) {
         friends.add(f);

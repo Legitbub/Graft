@@ -2,6 +2,7 @@ package com.example.graft.views;
 
 import com.example.graft.UserService;
 import com.vaadin.flow.component.UI;
+import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -25,6 +26,10 @@ public class CreateAccountView extends HorizontalLayout {
         password.setPlaceholder("Password");
         form.add(username);
         form.add(password);
+
+        var submit = new Button("Submit", event ->
+                userService.createUser(username.getValue(), password.getValue()));
+        form.add(submit);
     }
 
     public static void show() {
