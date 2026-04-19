@@ -15,10 +15,11 @@ public class UserService {
         //this.ps = ps;
     }
 
-    public void createUser(String name, String pass, String email) {
+    public void createUser(String name, String uName, String pass, String email) {
         String safePass = encoder.encode(pass);
         var user = new User();
         user.setName(name);
+        user.setUsername(uName);
         user.setPassword(safePass);
         user.setEmail(email);
         repo.save(user);

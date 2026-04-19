@@ -7,5 +7,5 @@ import java.util.Optional;
 
 @Repository
 public interface UserRepository extends Neo4jRepository<User, Long> {
-    Optional<User> findByName(String username);
+    Optional<User> findByUsername(String username);
 }

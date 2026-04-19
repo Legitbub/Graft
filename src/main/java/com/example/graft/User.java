@@ -17,7 +17,8 @@ public class User {
     private Long ID;
     private String email;
     private String name;
-    private String bio;
+    private String bio = "empty bio";
+    private String username;
     private String password;
 
     // Users have a list of friends

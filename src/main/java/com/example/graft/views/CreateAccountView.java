@@ -26,14 +26,21 @@ public class CreateAccountView extends HorizontalLayout {
         password.setPlaceholder("Password");
         var email = new TextField();
         email.setPlaceholder("Email Address");
+        var name = new TextField();
+        name.setPlaceholder("First and Last Name");
+        form.add(name);
         form.add(email);
         form.add(username);
         form.add(password);
 
         var submit = new Button("Submit", event ->
-                userService.createUser(username.getValue(),
+                userService.createUser(name.getValue(), username.getValue(),
                         password.getValue(), email.getValue()));
+        var home = new Button("Back to Main Page", event -> {
+            MainView.show();
+        });
         form.add(submit);
+        form.add(home);
     }
 
     public static void show() {

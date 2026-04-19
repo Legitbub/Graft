@@ -1,5 +1,7 @@
-package com.example.graft;
+package com.example.graft.authentication;
 
+import com.example.graft.User;
+import com.example.graft.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -15,10 +17,11 @@ public class AccountDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = repo.findByName(username).orElseThrow(() ->
+        User user = repo.findByUsername(username).orElseThrow(() ->
                 new UsernameNotFoundException("Invalid user"));
+        System.out.println("DEBUG - Fetched password from Neo4j: " + user.getPassword());
         return org.springframework.security.core.userdetails.User
-                .withUsername(user.getName()).password(user.getPassword())
+                .withUsername(user.getUsername()).password(user.getPassword())
                 .roles("USER").build();
     }
 }
