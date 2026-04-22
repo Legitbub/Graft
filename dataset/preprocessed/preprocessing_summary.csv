@@ -1,0 +1,10 @@
+metric,value
+edge_files_read,10
+raw_edges_merged,170174
+malformed_lines_skipped,0
+self_loops_removed,0
+duplicate_edges_removed_global,85931
+unique_undirected_edges,84243
+unique_users,3959
+directed_follows,168486
+follows_mode,reciprocal
