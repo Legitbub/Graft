@@ -33,7 +33,7 @@ public class VaadinSecurityConfig {
         return http.build();
     }
 
-    // 🚨 THE FIX: Completely blind Spring Security to Vaadin's background files!
+    //THE FIX: Completely blind Spring Security to Vaadin's background files!
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
         return (web) -> web.ignoring().requestMatchers(
