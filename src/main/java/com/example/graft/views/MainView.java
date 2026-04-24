@@ -15,7 +15,7 @@ import com.vaadin.flow.spring.security.AuthenticationContext;
 @Route("login")
 @RouteAlias("")
 @AnonymousAllowed // public entry page
-@PageTitle("Graft - A Social Media Sim")
+@PageTitle("Graft")
 public class MainView extends VerticalLayout implements BeforeEnterObserver {
     private final LoginForm login = new LoginForm();
     private AuthenticationContext ac;
