@@ -23,9 +23,9 @@ This project is built using a Java Spring Boot backend with a Vaadin frontend an
 1. **Clone or Extract the Project:** Ensure you are in the project's root directory (`Graft`).
 2. **Configure Database Connection:** Open `src/main/resources/application.properties` and verify the Neo4j connection properties:
    ```properties
-   spring.neo4j.uri=neo4j+s://b85a5708.databases.neo4j.io
-   spring.neo4j.authentication.username=b85a5708
-   spring.neo4j.authentication.password=C9V6UPmelS68eiB-KtrOQ4TydbDhoJoA_ZhrWdm0WW4
+  spring.neo4j.uri = neo4j+s://2d033059.databases.neo4j.io
+  spring.neo4j.authentication.username = 2d033059
+  spring.neo4j.authentication.password = JHoRARZzOMJGspzJJ3C4E1viFaKue_q8h9dPfgsyzKk
    ```
    *(Note: You can uncomment the local Neo4j settings if you prefer to use a local instance).*
 3. **Build and Run:** Use the Maven wrapper included in the repository to start the application:
